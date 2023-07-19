@@ -1,0 +1,34 @@
+﻿@model EmployeeCrud.Models.AddStudentViewModel;
+@{
+    ViewData["title"] = "Add Student";
+    Layout = "_Mayout";
+}
+<style>
+    .addStdForm{
+        max-width:500px;
+        margin:0 auto;
+    }
+    .addStdForm > .form-group{
+        margin-bottom:20px;
+    }
+</style>
+
+<form class="addStdForm"  method="post">
+    <div class="form-group ">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" id="Name" placeholder="Student name" asp-for="Name" >
+        <span asp-validation-for="Name" class=" text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label for="Age">Age</label>
+        <input type="number" class="form-control" id="Age" placeholder="Age" asp-for="Age">
+        <span asp-validation-for="Age" class=" text-danger" ></span>
+       
+    </div>
+    <div class="form-group">
+        <label for="RollNo">RollNo</label>
+        <input type="number" class="form-control" id="Roll No." placeholder="Roll No." asp-for="Roll">
+        <span asp-validation-for="Roll" class=" text-danger"></span>
+    </div>
+   <button type="submit" class="btn btn-primary" asp-controller="Cool" asp-action="Add" >Submit</button>
+</form>
